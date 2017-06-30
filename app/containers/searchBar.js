@@ -14,11 +14,17 @@ onInputChange = (event) => {
 }
 
 /*------------------------------------------------------------------*/
+onFormSubmit = (event) => {
+  event.preventDefault()
+  
+} 
 
+/*------------------------------------------------------------------*/
   render () {
     return (
       <div>
-        <form action="" className="input-group">
+        <form className="input-group"
+          onSubmit={this.onFormSubmit} >
           <input type="text" 
             placeholder="Type city name to get forecast"
             className="form-control"
