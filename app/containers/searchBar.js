@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {fetchtWeather} from './../actions'
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props)
     this.state = { term: '' }
@@ -16,7 +19,9 @@ onInputChange = (event) => {
 /*------------------------------------------------------------------*/
 onFormSubmit = (event) => {
   event.preventDefault()
-  
+  let term = this.state.term
+  this.props.fetchtWeather(term)
+  this.state.term = ''
 } 
 
 /*------------------------------------------------------------------*/
@@ -42,3 +47,13 @@ onFormSubmit = (event) => {
     )
   }
 }
+
+/*------------------------------------------------------------------*/
+function mapDispatchToProps (dispatch)  {
+  return bindActionCreators({ fetchtWeather }, dispatch)
+}
+
+/*------------------------------------------------------------------*/
+/*null replaces the state, which is not being used */
+export default connect(null, mapDispatchToProps)(SearchBar)
+
