@@ -1,15 +1,20 @@
 table {
   align-items: center;
   align-content: center;
-  vertical-align: middle;
   text-align: center;
+  vertical-align: middle !important;
+  color: #555;
 }
 thead, th {
   text-align: center;
+  vertical-align: middle !important;
+  background-color: #D5D5D5;
+
 }
 td {
   height:8.5rem;
   padding-top:63.63%; 
+  vertical-align: middle !important;
   position: relative;
   margin: 0 50px;
 }

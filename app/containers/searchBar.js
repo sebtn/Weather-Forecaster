@@ -31,22 +31,22 @@ onFormSubmit = (event) => {
 /*------------------------------------------------------------------*/
   render () {
     return (
-      <div>
-        <form className="input-group"
-          onSubmit={this.onFormSubmit} >
-          <input type="text" 
-            placeholder="Type city name to get forecast"
-            className="form-control"
-            onChange={this.onInputChange}
-            ref="SearchText"
-            />
-            <span className="input-group-btn">            
-              <button className="btn btn-primary" 
-                type="submit">
-                Search
-              </button>
-            </span>
-        </form>
+      <div className="search-container">
+          <form className="input-group"
+            onSubmit={this.onFormSubmit} >
+            <input type="text" 
+              placeholder="Type city name to get forecast"
+              className="form-control"
+              onChange={this.onInputChange}
+              ref="SearchText"
+              />
+              <span className="input-group-btn">            
+                <button className="btn btn-primary outline" 
+                  type="submit">
+                  Search
+                </button>
+              </span>
+          </form>
       </div>
     )
   }

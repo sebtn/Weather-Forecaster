@@ -10,13 +10,15 @@ renderWeather = (cityData) =>  {
   const temp = cityData.list.map( (weather) => weather.main.temp )
   const pressure = cityData.list.map( (weather) => weather.main.pressure )
   const humidity = cityData.list.map( (weather) => weather.main.humidity )
-
+  /*note how props pass around from chartlist 
+  to the chart component props.color and props .units
+  bidirectional flow */
   return (
     <tr key={cityName}>
       <td>{cityName}</td>
-      <td> <Chart data={temp} color='orange' /> </td>
-      <td> <Chart data={pressure} color='blue' /> </td>
-      <td> <Chart data={humidity} color='green' /> </td>
+      <td> <Chart data={temp} color='orange' units=" K" /> </td>
+      <td> <Chart data={pressure} color='blue' units=" HPa" /> </td>
+      <td> <Chart data={humidity} color='green' units=" %" /> </td>
     </tr>
   )
 }
@@ -25,19 +27,21 @@ renderWeather = (cityData) =>  {
   render () {
     let cityWeather = this.props.weather
     return (
+      <div className="table-container">
       <table className="table table-hover">
         <thead>
           <tr>
             <th>City</th>
-            <th>Temp</th>
-            <th>Pressure</th>
-            <th>Humiduty</th>
+            <th>Temperature (K)</th>
+            <th>Pressure (HPa)</th>
+            <th>Humiduty (%)</th>
           </tr>
         </thead>
         <tbody>
           {cityWeather.map( this.renderWeather )}
         </tbody>
       </table>
+      </div>
     )
   }
 }
