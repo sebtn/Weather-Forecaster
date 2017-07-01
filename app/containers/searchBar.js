@@ -7,7 +7,7 @@ import {fetchtWeather} from './../actions'
 class SearchBar extends Component {
   constructor(props) {
     super(props)
-    this.state = { term: '' }
+    this.state = { term: ' ' }
   }
 /*------------------------------------------------------------------*/
 onInputChange = (event) => {
@@ -19,9 +19,13 @@ onInputChange = (event) => {
 /*------------------------------------------------------------------*/
 onFormSubmit = (event) => {
   event.preventDefault()
-  let term = this.state.term
-  this.props.fetchtWeather(term)
-  this.state.term = ''
+  let term = this.refs.SearchText.value
+  if (term.length === 0) {
+    alert('please type something')
+  } else {
+    this.props.fetchtWeather(term)
+  }
+  return this.refs.SearchText.value = ''
 } 
 
 /*------------------------------------------------------------------*/
