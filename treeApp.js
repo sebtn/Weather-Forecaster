@@ -22,11 +22,12 @@
 │   │   │   └── _variables.scss
 │   │   └── components
 │   │       ├── charts.scss
-│   │       └── cityList.scss
+│   │       ├── cityList.scss
+│   │       ├── main.scss
+│   │       └── searchBar.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
-├── appTree.js
 ├── karma.conf.js
 ├── package.json
 ├── public
@@ -34,6 +35,7 @@
 │   └── index.html
 ├── README.md
 ├── server.js
+├── treeApp.js
 └── webpack.config.js
 
-12 directories, 24 files
+12 directories, 26 files
