@@ -1,21 +1,28 @@
 .
+├── api.js
 ├── app
 │   ├── actions
 │   │   └── index.js
 │   ├── app.js
 │   ├── components
+│   │   ├── chart.js
 │   │   └── Main.js
 │   ├── containers
+│   │   ├── cityList.js
 │   │   └── searchBar.js
 │   ├── reducers
-│   │   └── index.js
+│   │   ├── index.js
+│   │   └── reducer_fetchWeather.js
 │   ├── store
 │   │   └── configureStore.js
 │   ├── styles
 │   │   ├── app.scss
-│   │   └── base
-│   │       ├── _core.scss
-│   │       └── _variables.scss
+│   │   ├── base
+│   │   │   ├── _core.scss
+│   │   │   └── _variables.scss
+│   │   └── components
+│   │       ├── charts.scss
+│   │       └── cityList.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -29,4 +36,4 @@
 ├── server.js
 └── webpack.config.js
 
-11 directories, 18 files
+12 directories, 24 files
