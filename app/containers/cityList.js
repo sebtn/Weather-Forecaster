@@ -11,8 +11,6 @@ renderWeather = (cityData) =>  {
   const pressure = cityData.list.map( (weather) => weather.main.pressure )
   const humidity = cityData.list.map( (weather) => weather.main.humidity )
 
-  console.log(cityData.list)
-
   return (
     <tr key={cityName}>
       <td>{cityName}</td>
