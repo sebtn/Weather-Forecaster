@@ -2,23 +2,27 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import Chart from './../components/chart'
+import GoogleMap from './../components/map'
 
 class CityList extends Component {
 /*-------------------------------------------------------------*/    
 renderWeather = (cityData) =>  {
+  const lon = cityData.city.coord.lon
+  const lat = cityData.city.coord.lat
   const cityName = cityData.city.name
   const temp = cityData.list.map( (weather) => weather.main.temp )
   const pressure = cityData.list.map( (weather) => weather.main.pressure )
   const humidity = cityData.list.map( (weather) => weather.main.humidity )
   /*note how props pass around from chartlist 
-  to the chart component props.color and props .units
-  bidirectional flow */
+  to the chart component like: data, props.data, props.color 
+  and props.units bidirectional flow */
   return (
     <tr key={cityName}>
-      <td>{cityName}</td>
-      <td> <Chart data={temp} color='orange' units=" K" /> </td>
-      <td> <Chart data={pressure} color='blue' units=" HPa" /> </td>
-      <td> <Chart data={humidity} color='green' units=" %" /> </td>
+      {/* <td>{cityName}</td> */}
+      <td> <GoogleMap lon={lon} lat={lat}/> </td>
+      <td> <Chart data={temp} color='orange' units=" K (Avg.)" /> </td>
+      <td> <Chart data={pressure} color='blue' units=" HPa (Avg.)" /> </td>
+      <td> <Chart data={humidity} color='green' units=" % (Avg.)" /> </td>
     </tr>
   )
 }

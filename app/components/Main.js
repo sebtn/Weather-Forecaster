@@ -17,15 +17,15 @@ export default class Main extends Component {
           </div>
           <div className="col-md-1 col-lg-2"></div>
         </div>
-
+        <div className="cityList-container">
         <div className="row">
-          <div className="col-md-0 col-lg-0"></div>
-          <div className="col-md-12 col-lg-12">
+          <div className="col-sm-0"></div>
+          <div className="col-sm-12 ">
             <CityList />
           </div>
-          <div className="col-md-0 col-lg-0"></div>
+          <div className="col-sm-0"></div>
         </div>
-
+        </div>
       </div>
     )
   }
